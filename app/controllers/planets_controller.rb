@@ -5,4 +5,11 @@ class PlanetsController < ApplicationController
 		# render(:index)
 	end
 
+	def new
+	end
+
+	def create
+		render plain: "I am gonna create #{params[:planet][:name]}."
+	end
+
 end
