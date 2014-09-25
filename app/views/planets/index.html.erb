@@ -1,9 +1,13 @@
 <h2>Planets</h2>
 
-<% @planets.each do |planet| %>
+<ul>
+    <% @planets.each do |planet| %>
 
-	<%= planet.name %> is <%= planet.diameter %> in diameter.
+        <li>
+            <%= link_to planet.name, planet %>
+        </li>
 
-	<br />
+    <% end %>
+</ul>
 
-<% end %>
+<%= link_to 'New planet', new_planet_path %>

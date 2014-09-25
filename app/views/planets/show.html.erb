@@ -1,0 +1,13 @@
+<h2><%= @planet.name %></h2>
+<%= link_to 'Back to Planets', planets_path, class: 'back_link' %>
+
+<section class="planet_info">
+    <strong>Diameter</strong>: <%= @planet.diameter %>
+</section>
+
+<br />
+
+<%= link_to 'Edit', edit_planet_path(@planet) %>
+<%= link_to 'Destroy', planet_path(@planet),
+            method: :delete,
+            data: { confirm: 'Are you sure?' } %>

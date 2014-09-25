@@ -1,17 +1,4 @@
-Make a planet!
+<h2>Make a planet!</h2>
+<%= link_to 'Back to Planets', planets_path, class: 'back_link' %>
 
-<%= form_for :planet, url: planets_path do |f| %>
-  <p>
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </p>
- 
-  <p>
-    <%= f.label :diameter %><br>
-    <%= f.text_field :diameter %>
-  </p>
- 
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+<%= render 'form' %>
