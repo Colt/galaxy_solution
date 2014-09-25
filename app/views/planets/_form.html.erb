@@ -1,15 +1,26 @@
 <%= form_for @planet do |f| %>
-  <p>
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </p>
+    <% if @planet.errors.any? %>
+        <div id="error_explanation">
+            <h3><%= pluralize(@planet.errors.count, "error") %>:</h3>
+            <ul>
+                <% @planet.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
 
-  <p>
-    <%= f.label :diameter %><br>
-    <%= f.text_field :diameter %>
-  </p>
+    <p>
+        <%= f.label :name %><br>
+        <%= f.text_field :name %>
+    </p>
 
-  <p>
-    <%= f.submit %>
-  </p>
+    <p>
+        <%= f.label :diameter %><br>
+        <%= f.text_field :diameter %>
+    </p>
+
+    <p>
+        <%= f.submit %>
+    </p>
 <% end %>

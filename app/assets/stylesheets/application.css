@@ -14,8 +14,12 @@
  *= require_self
  */
 
+body {
+    font-family: Arial, Verdana, sans-serif;
+}
+
 .back_link {
     font-size: 8px;
     position: relative;
-    top: -30px;
+    top: -25px;
 }

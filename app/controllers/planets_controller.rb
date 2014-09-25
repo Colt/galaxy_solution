@@ -15,9 +15,12 @@ class PlanetsController < ApplicationController
     def create
         @planet = Planet.create planet_params
 
-        flash[:notice] = "Your planet has been created."
-
-        redirect_to planets_path
+        if @planet.valid?
+            flash[:notice] = "Your planet has been created."
+            redirect_to planets_path
+        else
+            render :new
+        end
     end
 
     def edit
@@ -27,9 +30,13 @@ class PlanetsController < ApplicationController
     def update
         @planet = Planet.find params[:id]
         @planet.update planet_params
-        flash[:notice] = "Your planet has been updated."
 
-        redirect_to @planet
+        if @planet.valid?
+            flash[:notice] = "Your planet has been updated."
+            redirect_to @planet
+        else
+            render :edit
+        end
     end
 
     def destroy
