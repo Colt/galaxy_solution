@@ -1,1 +1,9 @@
-yo
+<h2>Planets</h2>
+
+<% @planets.each do |planet| %>
+
+	<%= planet.name %> is <%= planet.diameter %> in diameter.
+
+	<br />
+
+<% end %>
