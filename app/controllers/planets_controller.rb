@@ -12,6 +12,17 @@ class PlanetsController < ApplicationController
         @planet = Planet.new
     end
 
+    def copy
+        old = Planet.find params[:id]
+
+        @planet = Planet.new(
+            name: old.name,
+            diameter: old.diameter
+        )
+
+        render :edit
+    end
+
     def create
         @planet = Planet.create planet_params
 

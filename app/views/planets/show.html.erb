@@ -8,6 +8,7 @@
 <br />
 
 <%= link_to 'Edit', edit_planet_path(@planet) %>
+<%= link_to 'Copy', copy_planet_path(@planet) %>
 <%= link_to 'Destroy', planet_path(@planet),
             method: :delete,
             data: { confirm: 'Are you sure?' } %>

@@ -1,4 +1,9 @@
-<h2>Editing <%= @planet.name %></h2>
+<% if @planet.new_record? %>
+    <h2>Copying <%= @planet.name %></h2>
+<% else %>
+    <h2>Editing <%= @planet.name %></h2>
+<% end %>
+
 <%= link_to 'Back to planet', @planet, class: 'back_link' %>
 
 <%= render 'form' %>
