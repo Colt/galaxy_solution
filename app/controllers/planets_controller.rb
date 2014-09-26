@@ -1,5 +1,4 @@
 class PlanetsController < ApplicationController
-
     def index
         @planets = Planet.all
     end
@@ -24,6 +23,7 @@ class PlanetsController < ApplicationController
     end
 
     def create
+        binding.pry
         @planet = Planet.create planet_params
 
         if @planet.valid?
@@ -44,6 +44,7 @@ class PlanetsController < ApplicationController
 
         if @planet.valid?
             flash[:notice] = "Your planet has been updated."
+
             redirect_to @planet
         else
             render :edit
